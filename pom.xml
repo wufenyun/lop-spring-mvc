@@ -19,7 +19,12 @@
 			<artifactId>lop</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-		
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>3.0-alpha-1</version>
+			<scope>provided</scope>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
@@ -62,31 +67,31 @@
 		<plugins>
 			<!-- jetty插件 -->
 			<!--add maven jetty plugin to developemet -->
-            <plugin>
-                <groupId>org.eclipse.jetty</groupId>
-                <artifactId>jetty-maven-plugin</artifactId>
-                <version>9.1.0.RC0</version>
-                <configuration>
-                    <webApp>
-                        <contextPath>/</contextPath>
-                    </webApp>
-                    <scanIntervalSeconds>3</scanIntervalSeconds>
-                    <scanTargetPatterns>
-                        <scanTargetPattern>
-                            <directory>src/main/webapp</directory>
-                            <includes>
-                                <include>**/*.xml</include>
-                                <include>**/*.properties</include>
-                            </includes>
-                        </scanTargetPattern>
-                    </scanTargetPatterns>
-                    <httpConnector>
-                        <port>80</port>
-                        <idleTimeout>60000</idleTimeout>
-                    </httpConnector>
-                    <reload>manual</reload>
-                </configuration>
-            </plugin>
+			<plugin>
+				<groupId>org.eclipse.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>9.1.0.RC0</version>
+				<configuration>
+					<webApp>
+						<contextPath>/</contextPath>
+					</webApp>
+					<scanIntervalSeconds>3</scanIntervalSeconds>
+					<scanTargetPatterns>
+						<scanTargetPattern>
+							<directory>src/main/webapp</directory>
+							<includes>
+								<include>**/*.xml</include>
+								<include>**/*.properties</include>
+							</includes>
+						</scanTargetPattern>
+					</scanTargetPatterns>
+					<httpConnector>
+						<port>80</port>
+						<idleTimeout>60000</idleTimeout>
+					</httpConnector>
+					<reload>manual</reload>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 </project>
