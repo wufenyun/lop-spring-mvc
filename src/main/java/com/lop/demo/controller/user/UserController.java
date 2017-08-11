@@ -4,6 +4,10 @@
  */
 package com.lop.demo.controller.user;
 
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -17,8 +21,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class UserController {
 	
 	@RequestMapping("login")
-	public String login() {
-		System.out.println("login");
+	public String login(HttpServletRequest req) {
+	    Map<String,String> map = req.getParameterMap();
+		System.out.println("login"+map.size());
 		return null;
 	}
 }

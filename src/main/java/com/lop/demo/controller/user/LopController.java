@@ -15,7 +15,7 @@ import com.lopframework.lop.annotation.ServiceProcessorMethod;
 @ServiceProcessor
 public class LopController {
     
-    @ServiceProcessorMethod(method = "hello", version = "1.0")
+    @ServiceProcessorMethod(method = "api.hello", version = "1.0")
     public Object hello() {
         System.out.println("hello service call");
         return "hello";

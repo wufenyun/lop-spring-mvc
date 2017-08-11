@@ -15,8 +15,7 @@ public class TestSpringSchema {
 
     @Test
     public void test() {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("classpath:applicationContext.xml");
-
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("classpath:applicationContexts.xml");
         AnnotationServiceDispatcher ds = (AnnotationServiceDispatcher) context.getBean("annotationServiceDispatcher");
         ApplicationContext applicationContext = ds.getApplicationContext();
         System.out.println(applicationContext.getId());
