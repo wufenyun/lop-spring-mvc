@@ -4,8 +4,9 @@
  */
 package com.lop.demo.controller.user;
 
+import com.lop.demo.service.user.entity.User;
+import com.lopframework.lop.annotation.ServiceMapping;
 import com.lopframework.lop.annotation.ServiceProcessor;
-import com.lopframework.lop.annotation.ServiceProcessorMethod;
 
 /**
  * Description:  
@@ -15,9 +16,10 @@ import com.lopframework.lop.annotation.ServiceProcessorMethod;
 @ServiceProcessor
 public class LopController {
     
-    @ServiceProcessorMethod(method = "api.hello", version = "1.0")
-    public Object hello() {
+    @ServiceMapping(method = "api.hello", version = "1.0")
+    public Object hello(User user) {
         System.out.println("hello service call");
+        System.out.println(user.getName());
         return "hello";
     }
 }
