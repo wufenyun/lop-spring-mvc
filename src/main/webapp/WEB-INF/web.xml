@@ -32,13 +32,13 @@
 	<!-- lop Servlet-->
 	<servlet>
 		<servlet-name>lopServlet</servlet-name>
-		<servlet-class>com.lopframework.lop.servlet.LopServlet</servlet-class>
+		<servlet-class>com.lopframework.servlet.LopServlet</servlet-class>
 		<load-on-startup>2</load-on-startup>
 	</servlet>
 
 	<servlet-mapping>
 		<servlet-name>lopServlet</servlet-name>
-		<url-pattern>/router</url-pattern>
+		<url-pattern>/gateway</url-pattern>
 	</servlet-mapping>
 
 	<welcome-file-list>

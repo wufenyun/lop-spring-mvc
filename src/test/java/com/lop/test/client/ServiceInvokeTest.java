@@ -16,13 +16,13 @@ import org.junit.Test;
  */
 public class ServiceInvokeTest {
     
-    String url = "http://localhost/router";
+    String url = "http://localhost/gateway";
     LopClient lopClient = new LopClient();
     
     @Test
     public void test() {
         Map<String,Object> param = new HashMap<>();
-        param.put("method", "api.hello");
+        param.put("method", "api.hellos");
         param.put("appkey", "00001");
         param.put("version", "1.0");
         param.put("name", "tomson");

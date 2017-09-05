@@ -5,6 +5,8 @@
 package com.lop.test.client;
 
 import java.io.IOException;
+import java.io.Reader;
+import java.nio.CharBuffer;
 import java.util.Map;
 
 import com.alibaba.fastjson.JSON;
@@ -14,6 +16,8 @@ import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
+import okhttp3.Response;
+import okhttp3.ResponseBody;
 
 /**
  * Description:  
@@ -39,7 +43,16 @@ public class LopClient {
         RequestBody body = builder.build();
         Request request = new Request.Builder().url(url).post(body).build();
         try {
-            client.newCall(request).execute();
+            Response resp = client.newCall(request).execute();
+            ResponseBody obj= resp.body();
+            Reader reader = obj.charStream();
+            int n;
+            CharBuffer target = CharBuffer.allocate(1024);
+            while((n=reader.read(target))!=-1) {
+                target.flip();
+                System.out.println(target);
+            }
+            System.out.println(obj.contentType());
         } catch (IOException e) {
             e.printStackTrace();
         }

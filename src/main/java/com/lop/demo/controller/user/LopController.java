@@ -5,8 +5,8 @@
 package com.lop.demo.controller.user;
 
 import com.lop.demo.service.user.entity.User;
-import com.lopframework.lop.annotation.ServiceMapping;
-import com.lopframework.lop.annotation.ServiceProcessor;
+import com.lopframework.config.annotation.ServiceMapping;
+import com.lopframework.config.annotation.ServiceProcessor;
 
 /**
  * Description:  
@@ -17,9 +17,10 @@ import com.lopframework.lop.annotation.ServiceProcessor;
 public class LopController {
     
     @ServiceMapping(method = "api.hello", version = "1.0")
-    public Object hello(User user) {
+    public Object hello(User user) throws InterruptedException {
         System.out.println("hello service call");
         System.out.println(user.getName());
+        //Thread.sleep(2000);
         return "hello";
     }
 }
